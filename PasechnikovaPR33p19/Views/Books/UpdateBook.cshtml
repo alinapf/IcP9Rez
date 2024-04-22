@@ -1,0 +1,57 @@
+﻿@model UpdateBookViewModel
+@{
+    ViewData["Title"] = "Изменение книги";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/styles/update-book.css" />
+</head>
+<body>
+    <div class="title-container">
+        <h1>Изменение книги</h1>
+    </div>
+
+    <div class="book-form">
+        <form method="post" enctype="multipart/form-data">
+            <input asp-for="Id" type="hidden" />
+            <div class="form-element">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" placeholder="Название книги" class="form-input" />
+            </div>
+            <div class="form-element">
+                <label asp-for="Author"></label>
+                <input asp-for="Author" placeholder="Автор" class="form-input" />
+            </div>
+            <div class="form-element">
+                <label asp-for="PageCount"></label>
+                <input asp-for="PageCount" placeholder="Количество страниц" class="form-input" />
+            </div>
+            <div class="form-element">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" asp-items="@Model.Categories" class="form-input"></select>
+            </div>
+            <div class="form-element">
+                <label asp-for="Photo"></label>
+                <span>@Model.PhotoString</span>
+                <input asp-for="Photo" accept=".png" class="form-input" />
+            </div>
+            <div class="form-element">
+                <label asp-for="File"></label>
+                <span>@Model.FileString</span>
+                <input asp-for="File" accept=".pdf" class="form-input" />
+            </div>
+            <div asp-validation-summary="All" class="error-messages"></div>
+            <div class="form-element form-element-buttons">
+                <input type="button" value="Назад" class="button-back" />
+                <input type="submit" value="Сохранить" class="button-save" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+

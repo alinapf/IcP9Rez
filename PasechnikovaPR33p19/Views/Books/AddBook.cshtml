@@ -1,0 +1,37 @@
+﻿@page
+@model BookViewModel
+@{
+    ViewData["Title"] = "Добавление книги";
+}
+
+<h1>Добавление книги</h1>
+<div class="book-form">
+    <form method="post" enctype="multipart/form-data">
+        <h1>Добавление книги: </h1>
+        <div class="form-element">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" />
+        </div>
+        <div class="form-element">
+            <label asp-for="Author"></label>
+            <input asp-for="Author" />
+        </div>
+        <div class="form-element">
+            <label asp-for="PageCount"></label>
+            <input asp-for="PageCount" />
+        </div>
+        <div class="form-element">
+            <label asp-for="CategoryId"></label>
+            <select asp-for="CategoryId" asp-items="Model.Categories"></select>
+        </div>
+        <div class="form-element">
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" accept=".png" />
+        </div>
+        <div class="form-element">
+            <label asp-for="File"></label>
+            <input asp-for="File" accept=".pdf" />
+        </div>
+        <input type="submit" value="Сохранить" />
+    </form>
+</div>

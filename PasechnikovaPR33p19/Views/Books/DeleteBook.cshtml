@@ -1,0 +1,16 @@
+﻿@model PasechnikovaPR33p19.Domain.Entities.Book
+
+<link rel="stylesheet" href="~/styles/deletebook.css" />
+
+<div class="center-content">
+    <div class="form-container">
+        <h1>Удаление книги</h1>
+        <p>Вы уверены, что хотите удалить книгу "@Model.Title"?</p>
+
+        <form method="post" action="/Books/DeleteBook">
+            <input type="hidden" name="bookId" value="@Model.Id" />
+            <button type="submit" class="delete-button">Удалить</button>
+            <a href="/Books/Index" class="cancel-button">Отмена</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@using PasechnikovaPR33p19
+@using PasechnikovaPR33p19.ViewModels
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/styles/login.css" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <form method="post" action="~/User/Login">
+                <h1>Электронная библиотека</h1>
+                <h2>Вход в систему</h2>
+                <label for="username">Имя пользователя:</label>
+                <input type="text" name="username" />
+                <label for="password">Пароль:</label>
+                <input type="password" name="password" />
+                <input type="hidden" name="returnUrl" value="@Context.Request.Query["returnUrl"]" />
+                <p>Или вы можете <a asp-controller="User" asp-action="Registration">зарегистрироваться</a></p>
+                <input type="submit" value="Вход в систему" />
+            </form>
+        </div>
+        <div class="side-image">
+        </div>
+    </div>
+</body>
+</html>
+

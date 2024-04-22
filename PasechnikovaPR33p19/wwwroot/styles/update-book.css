@@ -1,0 +1,60 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.book-form {
+    max-width: 400px;
+    margin: 50px auto; 
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+    .book-form h1 {
+        text-align: center; 
+    }
+
+.form-element {
+    margin-bottom: 15px;
+}
+
+    .form-element label {
+        display: block; 
+        font-weight: bold; 
+    }
+
+.title-container {
+    text-align: center;
+}
+
+    .form-element input[type="text"],
+    .form-element input[type="number"],
+    .form-element select {
+        width: 100%; 
+        padding: 8px; 
+        border-radius: 5px; 
+        border: 1px solid #ddd; 
+    }
+
+.form-element input[type="submit"],
+.form-element input[type="button"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0C1648;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+        .form-element input[type="submit"]:hover,
+        .form-element input[type="button"]:hover {
+            background-color: #2980b9; 
+        }
